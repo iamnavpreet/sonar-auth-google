@@ -182,8 +182,8 @@ public class GoogleSettings {
         .index(index++)
         .build(),
       PropertyDefinition.builder(LIMIT_DOMAIN)
-        .name("Allowed Domain")
-        .description("When set, this will only allow users from the specified GApps domain to authenticate")
+        .name("Allowed Domain(s)")
+        .description("When set, this will only allow users from the specified GApps domain(s) to authenticate")
         .category(CATEGORY)
         .subCategory(SUBCATEGORY)
         .index(index++)
@@ -199,3 +199,7 @@ public class GoogleSettings {
       );
   }
 }
+
+// This commit of code is taken from - https://github.com/InfoSec812/sonar-auth-google/pull/22
+// Original Author of code is - https://github.com/roelandpinch/sonar-auth-google/tree/multiple-domain-support
+// This code is compiled to test multi domain work check and its working

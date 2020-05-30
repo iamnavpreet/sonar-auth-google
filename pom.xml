@@ -3,7 +3,7 @@
 
   <groupId>org.sonarqube.auth.google</groupId>
   <artifactId>sonar-auth-googleoauth-plugin</artifactId>
-  <version>1.6.4-SNAPSHOT</version>
+  <version>1.6.5</version>
   <packaging>sonar-plugin</packaging>
   <name>Google Authentication for SonarQube</name>
   <inceptionYear>2016</inceptionYear>
@@ -51,15 +51,15 @@
   </properties>
 
   <scm>
-    <connection>scm:git:git@github.com:InfoSec812/sonar-auth-google.git</connection>
-    <developerConnection>scm:git:git@github.com:InfoSec812/sonar-auth-google.git</developerConnection>
-    <url>https://github.com/InfoSec812/sonar-auth-google</url>
+    <connection>scm:git:git@github.com:iamnavpreet/sonar-auth-google.git</connection>
+    <developerConnection>scm:git:git@github.com:iamnavpreet/sonar-auth-google.git</developerConnection>
+    <url>https://github.com/iamnavpreet/sonar-auth-google</url>
     <tag>HEAD</tag>
   </scm>
 
   <issueManagement>
     <system>GitHub Issues</system>
-    <url>https://github.com/InfoSec812/sonar-auth-google/issues</url>
+    <url>https://github.com/iamnavpreet/sonar-auth-google/issues</url>
   </issueManagement>
 
   <dependencies>
@@ -146,7 +146,7 @@
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>0.7.9</version>
         <configuration>
-          <destFile>${build.directory}/jacoco.exec</destFile>
+          <destFile>${project.build.directory}/jacoco.exec</destFile>
           <append>true</append>
         </configuration>
         <executions>
@@ -170,6 +170,16 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.22.0</version>
+      <configuration>
+    <forkCount>3</forkCount>
+    <reuseForks>true</reuseForks>
+    <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
+  </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

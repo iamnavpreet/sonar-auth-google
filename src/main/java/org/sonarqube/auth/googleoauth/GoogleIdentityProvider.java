@@ -124,9 +124,12 @@ public class GoogleIdentityProvider implements OAuth2IdentityProvider {
 
     GsonUser gsonUser = requestUser(scribe, accessToken);
     String redirectTo;
-    if (settings.oauthDomain()==null || (checkValidDomain(settings.oauthDomain(), gsonUser.getEmail()))) {
-        redirectTo = settings.getSonarBaseURL();
-        String referer_url = request.getHeader("referer");
+
+    if (domainIsAllowed(gsonUser.getEmail()) ) {
+    
+    redirectTo = settings.getSonarBaseURL();
+    
+    String referer_url = request.getHeader("referer");
         try {
             URL urlObj = new URL(referer_url);
             String returnToValue = null;
@@ -156,13 +159,24 @@ public class GoogleIdentityProvider implements OAuth2IdentityProvider {
     }
   }
 
-  private Boolean checkValidDomain(String oAuthDomains, String userEmail) {
-    for (String domain : oAuthDomains.split(",")) {
-      if (userEmail.trim().endsWith("@" + domain.trim())) {
-        return true;
+  private Boolean domainIsAllowed(String email) {
+
+      if (settings.oauthDomain()==null) {
+          return true;
       }
-    }
-    return false;
+
+      Boolean domainWhitelisted = true;
+
+      if (settings.oauthDomain()!=null) {
+          domainWhitelisted = false;
+
+          for ( String allowedDomain : settings.oauthDomain().split(",")) {
+              if (email.endsWith("@"+allowedDomain.replaceAll(" ", ""))) {
+                  domainWhitelisted = true;
+              }
+          }
+      }
+      return domainWhitelisted;
   }
 
   private GsonUser requestUser(OAuthService scribe, Token accessToken) {
@@ -191,3 +205,7 @@ public class GoogleIdentityProvider implements OAuth2IdentityProvider {
       .callback(context.getCallbackUrl());
   }
 }
+
+// This commit of code is taken from - https://github.com/InfoSec812/sonar-auth-google/pull/22
+// Original Author of code is - https://github.com/roelandpinch/sonar-auth-google/tree/multiple-domain-support
+// This code is compiled to test multi domain work check and its working
