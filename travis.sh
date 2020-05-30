@@ -14,9 +14,9 @@ mkdir -p target
 git show -s --pretty=format:"%h - %<|(35)%ai - %an - %s" $(git rev-list --tags --max-count=1)...$(git show | grep "^commit" | awk '{print $2}') | tee target/RELEASE_NOTES
 
 export MAVEN_OPTS="-Xmx1G -Xms128m"
-mvn package cobertura:cobertura verify sonar:sonar \
-    -Dmaven.test.redirectTestOutputToFile=false \
-    -Dsonar.host.url=${SONAR_HOST_URL} \
-    -Dsonar.organization=${SONAR_ORG_KEY} \
-    -Dsonar.login=${SONAR_TOKEN} \
-    -B -e -V
+# mvn package cobertura:cobertura verify sonar:sonar \
+#     -Dmaven.test.redirectTestOutputToFile=false \
+#     -Dsonar.host.url=${SONAR_HOST_URL} \
+#     -Dsonar.organization=${SONAR_ORG_KEY} \
+#     -Dsonar.login=${SONAR_TOKEN} \
+#     -B -e -V
