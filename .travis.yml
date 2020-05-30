@@ -16,8 +16,6 @@ deploy:
   provider: releases
   skip_cleanup: true
   api_key: "${GITHUB_TOKEN}"
-  file:
-   - "${RELEASE_JAR}"
-   - "target/RELEASE_NOTES"
+  file: "${RELEASE_JAR}"
   on:
     repo: iamnavpreet/sonar-auth-google
