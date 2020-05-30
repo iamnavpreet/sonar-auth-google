@@ -14,4 +14,4 @@ mkdir -p target
 git show -s --pretty=format:"%h - %<|(35)%ai - %an - %s" $(git rev-list --tags --max-count=1)...$(git show | grep "^commit" | awk '{print $2}') | tee target/RELEASE_NOTES
 echo $
 export MAVEN_OPTS="-Xmx1G -Xms128m"
-mvn package -B -e -V
+mvn package
