@@ -1,6 +1,6 @@
 language: java
 jdk:
-- oraclejdk9
+- oraclejdk14
 script: "./travis.sh"
 install: true
 sudo: false

@@ -1,5 +1,5 @@
 # Google Authentication Plug-in for SonarQube #
-[![Build Status](https://api.travis-ci.org/iamnavpreet/sonar-auth-google.svg)](https://travis-ci.org/iamnavpreet/sonar-auth-google)[![Known Vulnerabilities](https://snyk.io/test/github/iamnavpreet/sonar-auth-google/badge.svg?targetFile=pom.xml)](https://snyk.io/test/github/iamnavpreet/sonar-auth-google?targetFile=pom.xml)
+[![Build Status](https://travis-ci.org/iamnavpreet/sonar-auth-google.svg?branch=master)](https://travis-ci.org/iamnavpreet/sonar-auth-google)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=iamnavpreet_sonar-auth-google&metric=alert_status)](https://sonarcloud.io/dashboard?id=iamnavpreet_sonar-auth-google)
 
 
