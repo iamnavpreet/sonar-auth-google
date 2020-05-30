@@ -1,6 +1,6 @@
 language: java
 jdk:
-- oraclejdk8
+- oraclejdk9
 script: "./travis.sh"
 install: true
 sudo: false
@@ -20,4 +20,4 @@ deploy:
    - "${RELEASE_JAR}"
    - "target/RELEASE_NOTES"
   on:
-    repo: InfoSec812/sonar-auth-google
+    repo: iamnavpreet/sonar-auth-google
