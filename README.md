@@ -1,5 +1,5 @@
 # Google Authentication Plug-in for SonarQube #
-[![Build Status](https://api.travis-ci.org/InfoSec812/sonar-auth-google.svg)](https://travis-ci.org/InfoSec812/sonar-auth-google)[![Known Vulnerabilities](https://snyk.io/test/github/InfoSec812/sonar-auth-google/badge.svg?targetFile=pom.xml)](https://snyk.io/test/github/InfoSec812/sonar-auth-google?targetFile=pom.xml)
+[![Build Status](https://api.travis-ci.org/iamnavpreet/sonar-auth-google.svg)](https://travis-ci.org/iamnavpreet/sonar-auth-google)[![Known Vulnerabilities](https://snyk.io/test/github/iamnavpreet/sonar-auth-google/badge.svg?targetFile=pom.xml)](https://snyk.io/test/github/iamnavpreet/sonar-auth-google?targetFile=pom.xml)
 
 
 
